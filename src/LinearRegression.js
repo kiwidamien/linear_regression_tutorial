@@ -78,12 +78,13 @@ class LinearRegression extends Component {
       return Math.sqrt(mean_squared_error);
   }
 
-  totalError(w2, w1, temp0) {
+  meanError(w2, w1, temp0) {
     let error = 0;
-    this.state.scatterPlot.pointLocations.forEach( point => {
+    const points = this.state.scatterPlot.pointLocations;
+    points.forEach( point => {
       error += this.predict(point.x, w2, w1, temp0) - point.y;
     });
-    return error;
+    return error / points.length;
   }
 
   renderSidebar() {
@@ -106,7 +107,7 @@ class LinearRegression extends Component {
     const scatterProps = {
       width: 300,
       height: 250,
-      plotFunction: x => this.rmsError(0, x, this.state.temp0),
+      plotFunction: x => this.rmsError(this.state.w2, x, this.state.temp0),
       xlabel: 'w1',
       ylabel: 'RMS error',
       title: `Error with temp0 held at ${round(this.state.temp0)}`,
@@ -124,9 +125,10 @@ class LinearRegression extends Component {
     const scatterProps = {
       width: 300,
       height: 250,
-      plotFunction: x => this.rmsError(0, this.state.w1, x),
+      plotFunction: x => this.rmsError(this.state.w2, this.state.w1, x),
       xlabel: 'temp0',
       ylabel: 'RMS error',
+      title: `Error with w1 held at ${round(this.state.w1)}`,
       pointLocations: [{x: this.state.temp0, y: currentRMSError}],
       domainInterval: {...this.state.temp0Param},
       rangeInterval: {min:0, max: 60}
@@ -146,10 +148,10 @@ class LinearRegression extends Component {
   render() {
       const plotFunction = (x) => this.state.w1*(x - this.state.temp0);
       const {w2, w1, temp0} = this.state;
-      const error = this.totalError(w2, w1, temp0)
+      const error = this.meanError(w2, w1, temp0)
       const rms = this.rmsError(w2,w1, temp0);
 
-      const errorMsg = `Total error = ${round(error)} people, summed over all data points.`
+      const errorMsg = `Mean error = ${round(error)} people.`
       const rmsMsg = `Root mean squared error = ${round(rms)}`;
       return (
         <div className='linearRegression'>

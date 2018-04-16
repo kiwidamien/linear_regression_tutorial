@@ -1,0 +1,17 @@
+.fitline {
+  stroke: rgb(255,0,0);
+  stroke-width: 2;
+  fill: none;
+}
+
+.error-predict-low {
+  stroke: rgb(255,0,0);
+  stroke-width: 1;
+  stroke-dasharray: 5;
+}
+
+.error-predict-high {
+  stroke: rgb(0,0,0);
+  stroke-width: 1;
+  stroke-dasharray: 5;
+}

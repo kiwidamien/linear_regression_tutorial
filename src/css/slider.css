@@ -1,0 +1,15 @@
+.NumericSlider {
+  border: 1px solid black;
+  margin: 15px 5px;
+}
+
+.SliderControls {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.SliderControls .Slider {
+  flex-grow: 3;
+  flex-shrink: 3;
+}

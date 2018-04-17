@@ -33,9 +33,9 @@ function renderScatter(props){
   const {width, height, pointLocations} = props;
 
   const margins = {
-    top: 10,
-    bottom: 22,
-    left: 25,
+    top: 20,
+    bottom: 18,
+    left: 45,
     right:10
   };
 

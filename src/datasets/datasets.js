@@ -7,12 +7,12 @@ datasets['linearSet'] = xPoints1.map(x => {
   return {x: x, y: 2.2*(x - 32)};
 });
 
-datasets['linearNoise'] = datasets.linearSet.map((loc) => {
-  return {x: loc.x, y: loc.y + 12*Math.random()};
+datasets['linearNoise'] = xPoints1.map((loc) => {
+  return {x: loc, y: 1.8*(loc - 10) + 24*Math.random()};
 });
 
 datasets['quadratic'] = xPoints2.map(x => {
-  return {x: x, y: 2.8*(x-20) - 0.014*x*x};
+  return {x: x, y: 2.9*(x-15) - 0.015*x*x};
 });
 
 export default datasets;

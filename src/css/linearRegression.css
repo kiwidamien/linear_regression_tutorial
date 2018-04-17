@@ -1,17 +1,19 @@
 .linearRegression{
   display: flex;
-  justify-content: space-around;
+
 }
 
 .realSidebar{
   background-color: rgb(220,220,220);
   padding: 15px;
-  width: 400px;
+  width: 300px;
   font-size: 16pt;
+  margin-left:10px;
 }
 
 .graphArea{
   margin-top: 20px;
+  margin-left: 40px;
 }
 
 .errorGraphs{

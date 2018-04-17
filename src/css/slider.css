@@ -1,6 +1,12 @@
 .NumericSlider {
   border: 1px solid black;
   margin: 15px 5px;
+  font-size: 14pt;
+}
+
+.NumericSlider .TextInput {
+  font-size: 12pt;
+  width: 4.5em;
 }
 
 .SliderControls {
@@ -10,6 +16,6 @@
 }
 
 .SliderControls .Slider {
-  flex-grow: 3;
-  flex-shrink: 3;
+  flex-grow: 5;
+  flex-shrink: 5;
 }

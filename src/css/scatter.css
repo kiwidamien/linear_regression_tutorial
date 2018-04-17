@@ -3,6 +3,10 @@
   text-anchor: middle;
 }
 
+.axis-label {
+  text-anchor: middle;
+}
+
 .fitline {
   stroke: rgb(255,0,0);
   stroke-width: 2;

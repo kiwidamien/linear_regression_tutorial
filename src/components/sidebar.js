@@ -16,7 +16,7 @@ const renderSidebar = (props) => {
         <label for="quadraticModel">Use quadratic model?</label>
       </div>
 
-      <Button label='Linear data' onClick={onClickLinear}/>
+      <Button className='selected' label='Linear data' onClick={onClickLinear}/>
       <Button label='Linear + noise data' onClick={onClickLinearNoise}/>
       <Button label='Quadratic data'onClick={onClickQuadratic}/>
     </div>

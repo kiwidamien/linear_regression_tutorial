@@ -7,3 +7,7 @@
   padding: 13px;
   text-shadow: #666666;
 }
+
+.button .selected {
+  background-color: rgb(52,235, 152);
+}

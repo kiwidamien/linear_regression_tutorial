@@ -47,7 +47,8 @@ class LinearRegression extends Component {
       w2: 0.0,
       w2Param: {min:-0.05, max:0.05, step: 0.0005, name: 'Quad coeff (w2)'},
       datasetCollection: datasets,
-      useQuadraticModel: false
+      useQuadraticModel: false,
+      datasetName: 'linearSet'
     };
   }
 
@@ -57,7 +58,7 @@ class LinearRegression extends Component {
       scatterPlot: {...this.state.scatterPlot}
     };
     updateState.scatterPlot.pointLocations = newPoints;
-
+    updateState.datasetName = newDatasetName;
     this.setState(updateState);
   }
 
@@ -66,7 +67,6 @@ class LinearRegression extends Component {
   }
 
   onTemp0Change(newTemp0) {
-    console.log('called');
     this.setState({temp0: newTemp0});
   }
 
@@ -123,7 +123,8 @@ class LinearRegression extends Component {
         onClickLinear: () => this.changeDataset('linearSet'),
         onClickLinearNoise: () => this.changeDataset('linearNoise'),
         onClickQuadratic: () => this.changeDataset('quadratic'),
-        onClickShowW2: () => this.setState({useQuadraticModel: !this.state.useQuadraticModel})
+        onClickShowW2: () => this.setState({useQuadraticModel: !this.state.useQuadraticModel}),
+        datasetName: this.state.datasetName
       });
   }
 
